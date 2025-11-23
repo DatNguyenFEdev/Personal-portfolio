@@ -5,9 +5,7 @@
     "scripts": {
         "dev:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
         "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
-        "copy:alpine": "cpy \"node_modules/alpinejs/dist/cdn.min.js\" dist/vendor --flat",
-        "prepare:dist": "node build/prepare-dist.js",
-        "build": "npm run build:css && npm run copy:alpine && npm run prepare:dist"
+        "build": "npm run build:css && npx cpy \"images/**\" dist/images --parents && npx cpy \"node_modules/alpinejs/dist/cdn.min.js\" dist/vendor --flat && npx cpy index.html dist --flat"
     },
     "keywords": [],
     "author": "",
