@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
         "dev:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+        "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
         "copy:alpine": "cpy \"node_modules/alpinejs/dist/cdn.min.js\" dist/vendor --flat",
-        "prepare:dist": "cpy index.html dist --flat",
+        "prepare:dist": "node build/prepare-dist.js",
         "build": "npm run build:css && npm run copy:alpine && npm run prepare:dist"
     },
     "keywords": [],
