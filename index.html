@@ -11,26 +11,8 @@
     <meta name="author" content="DatHTMl">
     <link rel="canonical" href="https://www.google.com.vn/?&hl=vi">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class', // Enable dark mode via class
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#10b981',
-                        'secondary': '#f97316',
-                        'dark-bg': '#0f172a',
-                        'light-bg': '#ffffff',
-                        'light-text': '#f1f5f9',
-                        'dark-text': '#0f172a',
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="dist/output.css">
+    <script defer src="dist/vendor/cdn.min.js"></script>
 
     <style>
         .fade-in-up {
@@ -243,6 +225,13 @@
                     </div>
                 </div>
             </section>
+        </main>
+        <footer class="py-6 border-t mt-12" :class="darkMode ? 'border-gray-700 bg-dark-bg text-gray-400' : 'border-gray-300 bg-light-bg text-gray-600'">
+            <div class="container mx-auto px-4 md:px-8 text-center">
+                <p>&copy; 2024 Dat Nguyen. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
