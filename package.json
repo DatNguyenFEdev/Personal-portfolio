@@ -6,7 +6,8 @@
         "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
         "dev:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
         "copy:alpine": "cpy \"node_modules/alpinejs/dist/cdn.min.js\" dist/vendor --flat",
-        "build": "npm run build:css && npm run copy:alpine"
+        "prepare:dist": "cpy index.html dist --flat",
+        "build": "npm run build:css && npm run copy:alpine && npm run prepare:dist"
     },
     "keywords": [],
     "author": "",
